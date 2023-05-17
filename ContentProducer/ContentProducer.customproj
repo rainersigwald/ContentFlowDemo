@@ -1,3 +1,16 @@
 <Project>
+  <ItemGroup>
+    <CustomContentOutput Include="*.js" />
+  </ItemGroup>
 
+  <Target Name="Build" />
+
+  <Target Name="GetCopyToOutputDirectoryItems" Returns="@(CustomContentOutputFullPaths)">
+    <ItemGroup>
+      <CustomContentOutputFullPaths
+        Include="@(CustomContentOutput->'%(FullPath)')"
+        TargetPath="CustomContent\%(CustomContentOutput.RelativePath)\%(CustomContentOutput.FileName)%(CustomContentOutput.Extension)"
+        CopyToOutputDirectory="PreserveNewest" />
+    </ItemGroup>
+  </Target>
 </Project>

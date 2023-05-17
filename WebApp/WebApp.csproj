@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ContentProducer\ContentProducer.customproj" />
+    <ProjectReference Include="..\ContentProducer\ContentProducer.customproj" SkipGetTargetFrameworkProperties="true" TargetPath="asdf" />
   </ItemGroup>
 
 </Project>
