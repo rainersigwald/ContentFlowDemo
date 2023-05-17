@@ -7,7 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ContentProducer\ContentProducer.customproj" SkipGetTargetFrameworkProperties="true" TargetPath="asdf" />
+    <ProjectReference
+      Include="..\ContentProducer\ContentProducer.customproj"
+      SkipGetTargetFrameworkProperties="true"
+      CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 
 </Project>

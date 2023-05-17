@@ -10,7 +10,7 @@
       <CustomContentOutputFullPaths
         Include="@(CustomContentOutput->'%(FullPath)')"
         TargetPath="CustomContent\%(CustomContentOutput.RelativePath)\%(CustomContentOutput.FileName)%(CustomContentOutput.Extension)"
-        CopyToOutputDirectory="PreserveNewest" />
+        />
     </ItemGroup>
   </Target>
 </Project>
