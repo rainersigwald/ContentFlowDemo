@@ -7,10 +7,10 @@
 
   <Target Name="GetCopyToOutputDirectoryItems" Returns="@(CustomContentOutputFullPaths)">
     <ItemGroup>
-      <CustomContentOutputFullPaths
-        Include="@(CustomContentOutput->'%(FullPath)')"
-        TargetPath="CustomContent\%(CustomContentOutput.RelativePath)\%(CustomContentOutput.FileName)%(CustomContentOutput.Extension)"
-        />
+      <CustomContentOutputFullPaths Include="@(CustomContentOutput->'%(FullPath)')">
+        <!-- Note that this TargetPath is relative to the _referencing_ project's $(OutDir). -->
+        <TargetPath>CustomContent\%(CustomContentOutput.RelativePath)\%(CustomContentOutput.FileName)%(CustomContentOutput.Extension)</TargetPath>
+      </CustomContentOutputFullPaths>
     </ItemGroup>
   </Target>
 </Project>
